@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+    let btn1 = document.querySelector('btn1');
+    btn1.onclick = function() {
+      let myImage = (function (params) {
+        let imgNode = document.querySelector('.img2')
+        return {
+          setSrc: function(src) {
+            imgNode.src = src
+          }
+        }
+      })()
+      let proxyImage = (function (params) {
+        let img = new Image;
+        img.onload = function() {
+          myImage.setSrc(this.src)
+        }
+        return {
+          setSrc: function(src) {
+            // 添加加载动画
+            myImage.setSrc('./xxxxxx.gif')
+            img.src = src
+          }
+        }
+      })()
+      proxyImage.setSrc('./xxxxx.jpg')
+    }
+  </script>
+</body>
+</html>

@@ -46,3 +46,28 @@ function throttle(fn, mustRun = 500) {
     }
   }
 }
+
+// // 方式二
+
+// let num = document.getElementsByTagName('img').length;
+// let img = document.getElementsByTagName('img');
+// let n = 0;
+
+// lazyload()
+
+// window.onscroll = lazyload
+
+// function lazyload() {
+//   // 可见区域高度
+//   let seeHeight = document.documentElement.clientHeight;
+//   // 滚动条距离顶部的高度
+//   let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+//   for (let i = n; i < num; i++) {
+//     if (img[i].offsetTop < seeHeight + scrollTop) {
+//       img[i].src = img[i].getAttribute('data-src');
+//       // 放置重复加载
+//       n = i + 1
+//     }
+//   }
+// }
